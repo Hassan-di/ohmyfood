@@ -1,0 +1,11 @@
+@import './utils/header';
+
+@import './utils/global';
+
+main{
+  img{
+    width: 100%;
+    object-fit: cover;
+    max-height: 500px;
+}
+}

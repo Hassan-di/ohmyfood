@@ -1,0 +1,119 @@
+
+@import './utils/global';
+@import './utils/header';
+
+
+// start location 
+
+.location {
+  height: 50px;
+  background-color: #e7e7e7;
+
+  .container {
+      @extend %flex-center;
+      height: 100%;    
+      font-size: 16px;
+      font-weight: bold;
+      color: #444;
+
+      i {
+          position: relative;
+          left: -18px;
+          color: #444;
+      }
+  }
+}
+
+main {
+  background-color: $backround-gray;
+  
+  .container {
+      text-align: center;
+      @include padding-top-bottom(30px);
+
+      h2 {
+          font-size: 22px;
+      }
+
+      p {
+          padding: 20px 0;
+          color: #555;
+          font-size: $font-18
+      }
+
+      a {
+
+          @extend .button;
+          margin-bottom: 20px;
+      }
+
+  }
+}
+.how-works {
+  background-color: $white;
+
+  .container{
+    @include padding-top-bottom(30px);
+    
+    ol{
+      @extend %flex-center;
+      flex-direction: column;
+      counter-reset: count;
+      padding-left: 12px;
+
+        li{
+          width: 100%;
+          list-style-type: none;
+          position: relative;
+          background-color: $backround-gray;
+          border-radius: 27px;
+          margin-bottom: 12px;
+          margin-top: 12px;
+          box-shadow: 0 3px 13px 3px #dfdfdf;
+          font-weight: bold; 
+          @include padding-top-bottom(27px);
+
+          i{
+            margin-left: 36px;
+            margin-right: 15px;
+            font-size: 20px;
+            color: #777;
+          }
+
+          &:before {
+            counter-increment: count;
+            content: counter(count)" ";
+            position: absolute;
+            left: 0;
+            top:50%;
+            transform: translate(-50%,-50%);            
+            padding:4px 8px;
+            border-radius:50%;
+            color: $white;
+            background: $primary-color;
+            font-weight: normal;
+            font-size: 14px;
+          }
+
+          &:hover  {
+            background-color: #f1eafc;
+
+            i{
+              color: $primary-color;
+            }
+          }
+        }
+
+        @include medium-screen{
+          
+          flex-direction: row;
+          justify-content: space-between;
+
+          li:nth-child(2){
+            margin-left: 32px;
+            margin-right: 32px;
+          }
+        }
+      }
+  }
+}

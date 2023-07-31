@@ -1,0 +1,73 @@
+@import '_mixins-placeholders.scss';
+// start header
+header {
+    height: $head-height;
+    border-bottom: 2px solid #d7d7d7;
+    padding: 20px 0 16px;
+
+    @include medium-screen() {
+        height: 70px;
+    }
+
+    .container {
+        @extend %flex-center;
+
+        i {
+            position: relative;
+            left: -65px;
+        }
+
+        a img {
+            width: 165px;
+        }
+
+    }
+
+
+}
+
+.location {
+    height: 50px;
+    background-color: #e6e6e6;
+
+    .container {
+        @extend %flex-center;
+        height: 100%;
+        font-size: $font-18;
+
+        i {
+            position: relative;
+            left: -24px;
+        }
+    }
+}
+
+main {
+    background-color: $backround-gray;
+    
+    .container {
+        text-align: center;
+        @include padding-top-bottom(30px);
+
+        h2 {
+            font-size: 22px;
+        }
+
+        p {
+            padding: 20px 0;
+            color: #777;
+            font-size: $font-18
+        }
+
+        a {
+            @extend .button;
+            margin-bottom: 20px;
+        }
+
+    }
+    img{
+        width: 100%;
+        object-fit: cover;
+        max-height: 500px;
+    }
+}

@@ -1,0 +1,48 @@
+@import 'variables.scss';
+
+@mixin medium-screen {
+    @media (min-width: $mobile-media ) {
+        @content;
+    }
+}
+
+@mixin padding-top-bottom ($p) {
+    padding-top: $p;
+    padding-bottom: $p;
+}
+
+%flex {
+    display: flex;
+    align-items: center;
+}
+
+%flex-start {
+    @extend %flex;
+    justify-content: flex-start;
+
+}
+
+%flex-center {
+    @extend %flex;
+    justify-content: center;
+}
+
+%flex-between {
+  @extend %flex;
+  justify-content: space-between;
+}
+.button {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    padding: 16px 26px;
+    border-radius: 40px;
+    color: $white;
+    opacity: .9;
+    background: radial-gradient(ellipse at top left, #FF79DA, #9356DC);
+
+    &:hover {
+        opacity: .8;
+        color: $white;
+    }
+}
