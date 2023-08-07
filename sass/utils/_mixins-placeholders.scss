@@ -6,6 +6,17 @@
     }
 }
 
+
+@mixin large-screen {
+  @media (min-width: $tablet-media ) {
+      @content;
+  }
+}
+
+ @mixin gradient-color {
+  background: radial-gradient(ellipse at top left, $secondary-color, $primary-color);
+ }
+
 @mixin padding-top-bottom ($p) {
     padding-top: $p;
     padding-bottom: $p;
@@ -39,7 +50,7 @@
     border-radius: 40px;
     color: $white;
     opacity: .9;
-    background: radial-gradient(ellipse at top left, #FF79DA, #9356DC);
+    @include gradient-color();
 
     &:hover {
         opacity: .8;
